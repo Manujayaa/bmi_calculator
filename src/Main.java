@@ -2,26 +2,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
          Scanner scanner = new Scanner(System.in);
+         BMICalculator bmiCalculator = new BMICalculator();
 
-        System.out.println("Enter user1 weight in pounds: ");
-         double weightInPounds1 = scanner.nextDouble();
+        System.out.println("Enter user weight in pounds: ");
+         double weightInPounds = scanner.nextDouble();
 
-        System.out.println("Enter user1 height in inches: ");
-         double heightInInches1 = scanner.nextDouble();
+        System.out.println("Enter user height in inches: ");
+         double heightInInches = scanner.nextDouble();
 
-         double bmi1 = weightInPounds1 / (heightInInches1 * heightInInches1) * 703;
-
-
-        System.out.println("Enter user2 weight in pounds: ");
-        double weightInPounds2 = scanner.nextDouble();
-
-        System.out.println("Enter user2 height in inches: ");
-        double heightInInches2 = scanner.nextDouble();
-
-        double bmi2 = weightInPounds1 / (heightInInches2 * heightInInches2) * 703;
+         double bmiImperial = bmiCalculator.calculatorBmiImperial(weightInPounds,heightInInches);
 
 
-        System.out.println("BMI of user 1: " +bmi1);
-        System.out.println("BMI of user 2: " +bmi2);
+        System.out.println("Enter user weight in Kilo: ");
+        double  weightInKilo = scanner.nextDouble();
+
+        System.out.println("Enter user height in Meters: ");
+        double heightInMeters = scanner.nextDouble();
+
+        double bmiMetric = bmiCalculator.calculatorBmiMetric(weightInKilo,heightInMeters);
+
+
+        System.out.println("BMI in Imperial System: " +bmiImperial);
+        System.out.println("BMI of user 2: " +bmiMetric);
     }
 }
